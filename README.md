@@ -10,6 +10,35 @@ A simple user dashboard built with React, Axios, React Router, and Tailwind CSS.
 - View user details including address and geo-location
 - Responsive design
 
+## Project Structure
+
+src/
+ ├── api/
+ │    └── users.js              # API utilities for fetching users
+ │
+ ├── assets/
+ │    └── react.svg             # Static assets (e.g., logo, images)
+ │
+ ├── components/
+ │    ├── CreateUserForm.jsx    # Form component for adding a new user
+ │    └── UserCard.jsx          # Card UI component for displaying user info
+ │
+ ├── context/
+ │    └── UserContext.jsx       # React Context for global user state management
+ │
+ ├── hooks/
+ │    └── useDebouncedValue.js  # Custom hook for debouncing (used in search/filter)
+ │
+ ├── pages/
+ │    ├── DashboardPage.jsx     # Dashboard view showing list of users
+ │    └── UserDetailsPage.jsx   # Detailed user info page
+ │
+ ├── App.jsx                    # Root component with route setup
+ ├── App.css                    # App-level styles
+ ├── index.css                  # Global styles
+ └── main.jsx                   # Application entry point
+
+
 ## Setup
 
 ```sh
