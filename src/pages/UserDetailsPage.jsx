@@ -11,14 +11,12 @@ export default function UserDetailsPage() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Try to find user in local state first
     const localUser = users.find(u => String(u.id) === String(id));
     if (localUser) {
       setUser(localUser);
       setLoading(false);
       setError(null);
     } else {
-      // Fallback: fetch from API
       setLoading(true);
       fetchUserById(id)
         .then(data => {
@@ -48,28 +46,46 @@ export default function UserDetailsPage() {
     : null;
 
   return (
-    <div className="container mx-auto p-4">
-      <Link to="/" className="underline">← Back to Dashboard</Link>
-      <h1 className="text-2xl font-semibold mt-2">{user.name || "No Name"}</h1>
-
-      <div className="mt-3 grid gap-1 text-sm">
-        <div><span className="font-medium">Email:</span> {email || "N/A"}</div>
-        <div><span className="font-medium">Phone:</span> {phone || "N/A"}</div>
-        <div><span className="font-medium">Company:</span> {company?.name || "N/A"}</div>
-        <div><span className="font-medium">Website:</span> {website || "N/A"}</div>
-        <div>
-          <span className="font-medium">Address:</span>{" "}
-          {[street, suite, city, zipcode].filter(Boolean).join(", ") || "N/A"}
+    <div className="container mx-auto p-4 flex flex-col items-center">
+      <div className="w-full max-w-md bg-white border rounded-2xl p-6 shadow-lg flex flex-col items-center">
+        {/* Profile Icon */}
+        <div className="w-20 h-20 mb-4 rounded-full bg-blue-100 flex items-center justify-center">
+          <svg
+            className="w-12 h-12 text-blue-400"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2}
+            viewBox="0 0 24 24"
+          >
+            <circle cx="12" cy="8" r="4" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M4 20c0-3.333 3.333-6 8-6s8 2.667 8 6"
+            />
+          </svg>
         </div>
-        <div>
-          <span className="font-medium">Geo:</span>{" "}
-          {lat && lng ? `${lat}, ${lng}` : "N/A"}
-          {mapLink && (
-            <a className="ml-2 underline" href={mapLink} target="_blank" rel="noreferrer">
-              View on Map
-            </a>
-          )}
+        <h1 className="text-2xl font-semibold mb-2 text-center">{user.name || "No Name"}</h1>
+        <div className="mt-2 grid gap-2 text-sm w-full">
+          <div><span className="font-medium">Email:</span> {email || "N/A"}</div>
+          <div><span className="font-medium">Phone:</span> {phone || "N/A"}</div>
+          <div><span className="font-medium">Company:</span> {company?.name || "N/A"}</div>
+          <div><span className="font-medium">Website:</span> {website || "N/A"}</div>
+          <div>
+            <span className="font-medium">Address:</span>{" "}
+            {[street, suite, city, zipcode].filter(Boolean).join(", ") || "N/A"}
+          </div>
+          <div>
+            <span className="font-medium">Geo:</span>{" "}
+            {lat && lng ? `${lat}, ${lng}` : "N/A"}
+            {mapLink && (
+              <a className="ml-2 underline text-blue-600" href={mapLink} target="_blank" rel="noreferrer">
+                View on Map
+              </a>
+            )}
+          </div>
         </div>
+        <Link to="/" className="mt-6 underline text-blue-600">← Back to Dashboard</Link>
       </div>
     </div>
   );
