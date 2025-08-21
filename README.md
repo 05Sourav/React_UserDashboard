@@ -1,12 +1,32 @@
-# React + Vite
+# React User Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple user dashboard built with React, Axios, React Router, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Fetch and display users from API
+- Search/filter users by name
+- Create new users (client-side only)
+- View user details including address and geo-location
+- Responsive design
 
-## Expanding the ESLint configuration
+## Setup
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```sh
+git clone https://github.com/05Sourav/React_UserDashboard.git
+cd React_UserDashboard
+npm install
+npm run dev
+```
+
+## Screenshots
+
+![Dashboard Screenshot](screenshots/dashboard.png)
+![User Details Screenshot](screenshots/details.png)
+
+## Tech Stack
+
+- React (hooks)
+- Axios
+- React Router DOM
+- Tailwind CSS
