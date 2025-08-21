@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 export default function UserCard({ user }) {
   const { id, name, email, phone, company } = user;
   return (
-    <div
+    <Link
+      to={`/users/${id}`}
       className="bg-white border rounded-2xl p-4 shadow-sm transition-all duration-200
                  hover:shadow-lg hover:border-blue-400 hover:scale-[1.03] cursor-pointer flex flex-col items-center"
-      onClick={() => (window.location.href = `/users/${id}`)}
     >
       {/* Profile Icon */}
       <div className="w-14 h-14 mb-3 rounded-full bg-blue-100 flex items-center justify-center">
@@ -29,6 +29,6 @@ export default function UserCard({ user }) {
       <div className="text-sm text-gray-600 mb-1">{email}</div>
       <div className="text-sm text-gray-600 mb-1">{phone}</div>
       <div className="text-sm text-gray-500">{company?.name || "N/A"}</div>
-    </div>
+    </Link>
   );
 }
