@@ -24,8 +24,11 @@ function DashboardPage() {
 
   return (
     <div className="container mx-auto p-4">
-      <header className="flex flex-col sm:flex-row sm:items-center gap-3 justify-between">
-        <h1 className="text-2xl font-semibold">User Dashboard</h1>
+      <header className="flex flex-col sm:flex-row sm:items-center gap-3 justify-between mb-8">
+        <div>
+          <h1 className="text-2xl font-semibold">User Management</h1>
+          <p className="text-sm text-gray-500 mt-1">Search or add a new user</p>
+        </div>
         <input
           value={localQuery}
           onChange={(e) => setLocalQuery(e.target.value)}
@@ -34,7 +37,12 @@ function DashboardPage() {
         />
       </header>
 
-      <CreateUserForm />
+      <div className="mb-6">
+        <div className="bg-white border rounded-2xl p-6 shadow-sm w-full">
+          <CreateUserForm />
+        </div>
+      </div>
+      <h2 className="text-xl font-semibold mb-4 mt-8">Existing Users</h2>
 
       {loading && (
         <div className="mt-6 grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
