@@ -53,9 +53,18 @@ npm install
 npm run dev
 ```
 
+🌐 Live Demo
+
+Check out the live version of the dashboard hosted on Vercel:
+https://react-user-dashboard-five.vercel.app/
+
 🖼️ Screenshots
 
+![Dashboard Home](screenshots/dashboard-home.png)  
+*Dashboard home page with user list*
 
+![User Details](screenshots/user-details.png)  
+*User details page showing address and geo-location*
 
 
 🛠️ Tech Stack
