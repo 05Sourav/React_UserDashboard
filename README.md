@@ -51,6 +51,8 @@ git clone https://github.com/05Sourav/React_UserDashboard.git
 cd React_UserDashboard
 npm install
 npm run dev
+Open http://localhost:5173
+ in your browser
 ```
 
 🌐 Live Demo
@@ -66,13 +68,36 @@ https://react-user-dashboard-five.vercel.app/
 ![User Details](screenshots/user-details.png)  
 *User details page showing address and geo-location*
 
+🚀 Usage
+
+🔹Browse the user list on the dashboard
+
+🔹Use the search bar to filter users by name
+
+🔹Click on a user card to see full details
+
+🔹Use the "Create New User" form to add a user (client-side only)
+
+💡 Future Improvements
+
+🔹Add backend integration to persist created users
+
+🔹Implement pagination for large user lists
+
+🔹Add unit and integration tests
+
+🔹Optionally migrate to Redux for more complex state management
 
 🛠️ Tech Stack
 
-🔹 React (hooks) ⚛️
+🔹React (hooks) ⚛️
 
-🔹 Axios 🌐
+🔹Axios 🌐
 
-🔹 React Router DOM 🔀
+🔹React Router DOM 🔀
 
-🔹 Tailwind CSS 🎨
+🔹Tailwind CSS 🎨
+
+📄 License
+
+-> This project is licensed under the MIT License.
